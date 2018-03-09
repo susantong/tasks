@@ -1,0 +1,10 @@
+
+<div class="todos" ng-controller="todosCtrl">
+    <h1>todos</h1>
+    <div class="todos-enter">
+        <input text="text" placeholder="What needs to be done ?" ng-model="task.value" ng-keyup="enterEvent($event)">
+    </div>
+    <ul class="todos-item">
+        <li ng-repeat="x in items"><span ng-click="clickEvent($event)"></span><i ng-init="task.delValue=false" id="del">{{x}}</i></li>
+    </ul>
+</div>

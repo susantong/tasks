@@ -1,8 +1,8 @@
+const app = angular.module('app', ['ngRoute']);
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-    .when('/', {template: 'hrhrhrhr'})
-    .when('/todos', {template: 'hdhddj'})
-    .when('/slider', {template: 'decfedvfdvf'})
-    .when('/help', {template: 'aaaaa'})
+    .when('/todos', {templateUrl: '/html/todos.html'})
+    .when('/slider', {templateUrl: '/html/slider.html'})
+    .when('/help', {templateUrl: '/html/help.html'})
 }]);

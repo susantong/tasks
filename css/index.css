@@ -1,14 +1,14 @@
-.index-bar {
+.index {
     width: 60%;
     margin: 0 auto;
+}
+
+.index-bar {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     height: 60px;
     align-items: center;
     font-weight: 400;
     font-size: 2rem;
-}
-
-.index-bar li {
-    float: left;
 }

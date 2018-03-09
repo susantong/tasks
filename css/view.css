@@ -1,0 +1,52 @@
+.todos {
+    margin-top: 100px;
+}
+
+.todos h1 {
+    text-align: center;
+    font-size: 6rem;
+    color: rgba(175, 47, 47, 0.15);
+    font-weight: 100;
+}
+
+.todos-enter {
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+    border: .2rem solid rgba(175, 47, 47, 0.15);
+}
+
+.todos-enter input {
+    border: 0;
+    width: 90%;
+    height: 100%;
+    margin-left: 10%;
+    font-size: 3rem;
+    font-weight: 100;
+    outline: none;
+}
+
+.todos-item {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.todos-item li {
+    width: 100%;
+    border: .2rem solid rgba(175, 47, 47, 0.15);
+    border-top: none;
+    height: 60px;
+}
+
+.todos-item span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: .2rem solid #666;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+}
