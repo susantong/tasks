@@ -1,8 +1,8 @@
 const app = angular.module('app', ['ngRoute']);
 
-app.config(['$routeProvider', function ($routeProvider) {
+app.config(['$routeProvider', ($routeProvider) => {
     $routeProvider
-    .when('/todos', {templateUrl: '/html/todos.html'})
+    .when('/todos', {templateUrl: '../../html/todos.html'})
     .when('/slider', {templateUrl: '/html/slider.html'})
     .when('/help', {templateUrl: '/html/help.html'})
 }]);

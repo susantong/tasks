@@ -2,9 +2,19 @@
 <div class="todos" ng-controller="todosCtrl">
     <h1>todos</h1>
     <div class="todos-enter">
+        <span class="todos-select" ng-click="selectAll($event)" ng-show="items.length"><</span>
         <input text="text" placeholder="What needs to be done ?" ng-model="task.value" ng-keyup="enterEvent($event)">
     </div>
     <ul class="todos-item">
-        <li ng-repeat="x in items"><span ng-click="clickEvent($event)"></span><i ng-init="task.delValue=false" id="del">{{x}}</i></li>
+        <li ng-if="x.isShow" ng-repeat="x in items track by $index" ng-click="clickEvent($index, $event)"><span></span><i id="todos-item-text" class="{{x.className}}">{{x.text}}</i><i class="todos-del">x</i></li>
     </ul>
+    <div class="todos-footer" ng-show="items.length">
+        <p>{{task.count}} items left</p>
+        <ul class="todos-footer-list" ng-click="changeEvent($event)">
+            <li>All</li>
+            <li>Active</li>
+            <li>Completed</li>
+        </ul>
+        <p ng-show="task.clearShow" class="todos-clear" ng-click="clearEvent($event)">clear Completed</p>
+    </div>
 </div>
