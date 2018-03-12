@@ -23,6 +23,11 @@ function computedCount(scope) {
 app.controller('todosCtrl', $scope => {
     $scope.task = {count: 0, clearShow: false};
     $scope.items = [];
+    $scope.colors = [
+        {'danger': 'rgb(215, 84, 82)'},
+        {'info': 'rgb(95, 183, 96)'},
+        {'warning': 'rgb(239, 172, 86)'}
+    ];
 
     $scope.enterEvent = event => {
         const e = event ? event : window.event;
@@ -95,3 +100,18 @@ app.controller('todosCtrl', $scope => {
     };
 });
 
+/*
+    progressBar
+*/
+app.directive('progressBar', () => {
+    return {
+        scope: {
+            max: '@',
+            value: '@',
+            type: '@'
+        },
+        restrict:'EA',
+        replace: true,
+        templateUrl: '../../html/progressBar.html'
+    }
+});

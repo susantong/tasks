@@ -1,3 +1,7 @@
+/*
+    todos style
+*/
+
 .todos {
     margin-top: 100px;
 }
@@ -120,3 +124,33 @@
 .todos-footer-list li {
     cursor: pointer;
 }
+
+/*
+    progressBar style
+*/
+
+.progressBar {
+    width: 50%;
+    position: relative;
+}
+
+.progressBar progress {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color:#e6e6e6;
+    color: #0064b4;
+} 
+.progressBar progress::-moz-progress-bar { background: #0064b4; }
+.progressBar progress::-webkit-progress-bar { background: #e6e6e6; }
+.progressBar progress::-webkit-progress-value  { background: #0064b4; }
+
+.progressBar span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 100;
+} 
