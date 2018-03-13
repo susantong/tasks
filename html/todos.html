@@ -8,7 +8,7 @@
     <ul class="todos-item">
         <li ng-if="x.isShow" ng-repeat="x in items track by $index" ng-click="clickEvent($index, $event)"><span></span><i id="todos-item-text" class="{{x.className}}">{{x.text}}</i><i class="todos-del">x</i></li>
     </ul>
-    <div class="todos-footer" ng-show="items.length">
+    <div class="todos-footer" ng-show="items.length || all.length">
         <p>{{task.count}} items left</p>
         <ul class="todos-footer-list" ng-click="changeEvent($event)">
             <li>All</li>

@@ -20,14 +20,11 @@ function computedCount(scope) {
 
 }
 
-app.controller('todosCtrl', $scope => {
+app.controller('todosCtrl', ($scope, $routeParams) => {
     $scope.task = {count: 0, clearShow: false};
     $scope.items = [];
-    $scope.colors = [
-        {'danger': 'rgb(215, 84, 82)'},
-        {'info': 'rgb(95, 183, 96)'},
-        {'warning': 'rgb(239, 172, 86)'}
-    ];
+
+    $scope.id = $routeParams.id;
 
     $scope.enterEvent = event => {
         const e = event ? event : window.event;
@@ -75,7 +72,7 @@ app.controller('todosCtrl', $scope => {
             }
         }
 
-        computedCount($scope);
+       computedCount($scope);
     };
 
     $scope.changeEvent = event => {
@@ -103,12 +100,42 @@ app.controller('todosCtrl', $scope => {
 /*
     progressBar
 */
+
+app.controller('bar', ($scope) => {
+    $scope.data = {
+        max: 100,
+        value: 0,
+        type: 'info'
+    };
+
+    $scope.showPercent = () => {
+        $scope.data.value = Math.floor(Math.random() * ($scope.data.max + 1));
+
+        if ($scope.data.value < 50) {
+            $scope.data.type = 'info';
+        } else if ($scope.data.value > 80) {
+            $scope.data.type = 'danger';
+        } else {
+            $scope.data.type = 'warning';
+        }
+    };
+});
+
+
 app.directive('progressBar', () => {
+    
     return {
         scope: {
             max: '@',
             value: '@',
             type: '@'
+        },
+        link: ($scope, element, attr) => {
+        
+            $scope.$watch('value', (newVal) => {
+                $scope.percent = parseInt(newVal/$scope.max*100);
+            });
+           
         },
         restrict:'EA',
         replace: true,

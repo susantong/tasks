@@ -129,8 +129,13 @@
     progressBar style
 */
 
-.progressBar {
+.bar {
     width: 50%;
+    text-align: center;
+}
+
+.progressBar {
+    width: 100%;
     position: relative;
 }
 
@@ -139,11 +144,21 @@
     height: 30px;
     border: 1px solid #ccc;
     background-color:#e6e6e6;
-    color: #0064b4;
 } 
-.progressBar progress::-moz-progress-bar { background: #0064b4; }
+
 .progressBar progress::-webkit-progress-bar { background: #e6e6e6; }
-.progressBar progress::-webkit-progress-value  { background: #0064b4; }
+
+.progressBar .danger { color: rgb(215, 84, 82);}
+.progressBar .danger::-moz-progress-bar { background: rgb(215, 84, 82); }
+.progressBar .danger::-webkit-progress-value  { background: rgb(215, 84, 82); }
+
+.progressBar .info { color: rgb(95, 183, 96);}
+.progressBar .info::-moz-progress-bar { background: rgb(95, 183, 96); }
+.progressBar .info::-webkit-progress-value  { background: rgb(95, 183, 96); }
+
+.progressBar .warning { color: rgb(239, 172, 86);}
+.progressBar .warning::-moz-progress-bar { background: rgb(239, 172, 86); }
+.progressBar .warning::-webkit-progress-value  { background: rgb(239, 172, 86); }
 
 .progressBar span {
     position: absolute;
@@ -154,3 +169,15 @@
     color: #fff;
     font-weight: 100;
 } 
+
+.bar button {
+    width: 30%;
+    height: 2.6rem;
+    color: #fff;
+    border: 0;
+    border: 1px solid #ccc;
+    margin-top: 3rem;
+    background: rgb(15, 136, 235);
+    outline: none;
+    cursor: pointer;
+}

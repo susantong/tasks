@@ -1,1 +1,4 @@
-<progress-bar max="100" value="70" type="info"></progress-bar>
+<div class="bar" ng-controller="bar">
+    <progress-bar max="{{data.max}}" value="{{data.value}}" type="{{data.type}}"></progress-bar>
+    <button type="button" ng-click="showPercent()">随&nbsp;机</button>
+</div>
