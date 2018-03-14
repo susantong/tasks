@@ -10,17 +10,22 @@
     <body>
         <div ng-app="app" class="index">
             <ul class="index-bar">
-                <li><a href="#/">index</a></li>
+                <!-- <li><a href="#/">index</a></li>
                 <li><a href="#/todos">todos</a></li>
-                <li><a href="#/bar">bar</a></li>
-                <li><a ng-href="#/help/{{id}}">help</a></li>
+                <li><a href="#/bar">bar</a></li> -->
+                <!-- <li><a ng-href="#/help/{{id}}">help</a></li> -->
+                <li><a ui-sref="/">index</a></li>
+                <li><a ui-sref="todos">todos</a></li>
+                <li><a ui-sref="bar">bar</a></li>
+                <li><a ui-sref="help">help</a></li>
             </ul>
 
-            <div ng-view></div>
+            <div ui-view></div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        <script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-beta.3/angular-ui-router.js"></script>
         <script src="js/route.js"></script>
         <script src="js/controller.js"></script>
     </body>

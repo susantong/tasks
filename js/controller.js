@@ -24,8 +24,6 @@ app.controller('todosCtrl', ($scope, $routeParams) => {
     $scope.task = {count: 0, clearShow: false};
     $scope.items = [];
 
-    $scope.id = $routeParams.id;
-
     $scope.enterEvent = event => {
         const e = event ? event : window.event;
 
@@ -141,4 +139,12 @@ app.directive('progressBar', () => {
         replace: true,
         templateUrl: '../../html/progressBar.html'
     }
+});
+
+app.controller('helpCtrl', ($scope, $routeParams, $state) => {
+    $scope.id = $routeParams.id;
+    
+    $scope.clickGo = (event) => {
+        $state.go('help.fourth', {id: 123, name: 'susan'});
+    };
 });

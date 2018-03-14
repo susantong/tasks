@@ -1,1 +1,7 @@
-<h1>{{id}}</h1>
+<div ng-controller="helpCtrl">
+    <!-- <p>params: {{id}}</p> -->
+    <h1>hello</h1>
+    <a ui-sref="help.fifth({'name':123,'id':256})">ui-sref传参数</a>
+    <button type="button" ng-click="clickGo($event)">$state.go传参</button>
+    <ui-view></ui-view>
+</div>
